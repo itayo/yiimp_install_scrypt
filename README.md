@@ -1,5 +1,11 @@
 # yiimp
-Install script for yiimp on Ubuntu 16.04
+Install script for yiimp on Ubuntu *14.04*
+
+Before run ./install.sh for php7:
+
+	sudo apt-get install software-properties-common
+	sudo LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
+
 
 While I did add some server security to the script, it is every server owners responsibility to fully secure their own servers. After the installation you will still need to customize your serverconfig.php file to your liking, add your API keys, and build/add your coins to the control panel. 
 
