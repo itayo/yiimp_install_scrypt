@@ -1,7 +1,8 @@
 # yiimp
 Install script for yiimp on Ubuntu *14.04*
 
-*14.04 only {
+*14.04 only
+
 Before run ./install.sh for php7:
 
 	sudo apt-get install software-properties-common
@@ -16,7 +17,7 @@ Configure algorythms in yiimpd.conf:
 Install yiimpd and configure path to yiimpd.py
 
 	sudo cp yiimpd.conf /etc/init/yiimpd.conf
-	sudo vi /etc/init/yiimpd.conf
+	udo vi /etc/init/yiimpd.conf
 	sudo initctl reload-configuration
 
 Start yiimpd:
@@ -27,7 +28,6 @@ Stop yiimpd:
 
 	sudo initctl stop yiimpd
 
-*}
 
 While I did add some server security to the script, it is every server owners responsibility to fully secure their own servers. After the installation you will still need to customize your serverconfig.php file to your liking, add your API keys, and build/add your coins to the control panel. 
 
