@@ -10,14 +10,14 @@ Before run ./install.sh for php7:
 
 After run ./install.sh:
 
-Configure algorythms in yiimpd.conf:
+Configure algorythms in yiimpd.py:
 
 	sudo vi yiimpd.py
 
-Install yiimpd and configure path to yiimpd.py
+Install yiimpd as a daemon and configure path to yiimpd.py
 
 	sudo cp yiimpd.conf /etc/init/yiimpd.conf
-	udo vi /etc/init/yiimpd.conf
+	sudo vi /etc/init/yiimpd.conf
 	sudo initctl reload-configuration
 
 Start yiimpd:
