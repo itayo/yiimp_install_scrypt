@@ -1,7 +1,7 @@
 # yiimp
 Install script for yiimp on Ubuntu *14.04*
 
-*14.04 only
+* BEGIN: 14.04 only
 
 Before run ./install.sh for php7:
 
@@ -28,6 +28,7 @@ Stop yiimpd:
 
 	sudo initctl stop yiimpd
 
+* END: original below. 
 
 While I did add some server security to the script, it is every server owners responsibility to fully secure their own servers. After the installation you will still need to customize your serverconfig.php file to your liking, add your API keys, and build/add your coins to the control panel. 
 
