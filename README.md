@@ -10,23 +10,27 @@ Install script for yiimp on Ubuntu **14.04**
 
 ### After running *./install.sh*:
 
-Configure algorythms in *yiimpd.py*:
+Configure algorythms in *stratumd.py*:
 
-	sudo vi yiimpd.py
+	sudo vi stratumd.py
 
-Install yiimpd as a daemon and configure path to *yiimpd.py*
+Install yiimpd and stratumd to run as daemon, and configure paths to *yiimpd.py* and *stratumd.py* 
 
 	sudo cp yiimpd.conf /etc/init/yiimpd.conf
+	sudo cp stratumd.conf /etc/init/stratums.conf
 	sudo vi /etc/init/yiimpd.conf
+	sudo vi /etc/init/stratumd.conf
 	sudo initctl reload-configuration
 
 Start yiimpd:
 
 	sudo initctl start yiimpd
+	sudo initctl start stratumd
 
 Stop yiimpd:
 
 	sudo initctl stop yiimpd
+	sudo initctl stop stratumd
 
 ## } 
 
