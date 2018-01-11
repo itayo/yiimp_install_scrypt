@@ -16,15 +16,6 @@ LOGFILE = '/var/stratum/stratumd.log'
 
 STRATUM_DIR = '/var/stratum'
 
-
-
-def doCommand(cmd):
-	try:
-		ret = subprocess.check_output(cmd.split(), stderr=subprocess.STDOUT)
-		logger.info(ret)
-	except subprocess.CalledProcessError as e:
-		logger.error(e.output)
-
 def stratum_kicker(algo):
 	cmds = [STRATUM_DIR+'/stratum', 'config/'+algo]
 	while True:
