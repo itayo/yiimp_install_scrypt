@@ -32,7 +32,7 @@ output ""
     export BTC="n"
     export admin_panel="myAdminpanel"
     export install_fail2ban="y"
-    export UFW="y"
+    export UFW="n"
     export ssl_install="n"
 
     output ""
