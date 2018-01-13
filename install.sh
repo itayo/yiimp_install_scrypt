@@ -71,7 +71,9 @@ default         0;
     rootpasswd=$(openssl rand -base64 12)
     export DEBIAN_FRONTEND="noninteractive"
     sudo apt-get -y install mariadb-server
-    
+    ls /etc/init.d
+    ls /etc/init
+    sleep 5
     output "Installing php5.x and other needed files"
     output ""
     sudo apt-get -y install php7.0-fpm
