@@ -25,19 +25,16 @@ displayErr() {
 
 output "Make sure you double check before hitting enter! Only one shot at these!"
 output ""
-    read -e -p "Enter time zone (e.g. America/New_York) : " TIME
-    read -e -p "Server name (no http:// or www. just example.com) : " server_name
-    read -e -p "Are you using a subdomain (pool.example.com?) [y/N] : " sub_domain
-    read -e -p "Enter support email (e.g. admin@example.com) : " EMAIL
-    read -e -p "Set stratum to AutoExchange? i.e. mine any coinf with BTC address? [y/N] : " BTC
-    read -e -p "Please enter a new location for /site/adminRights this is to customize the admin entrance url (e.g. myAdminpanel) : " admin_panel
-    read -e -p "Enter your Public IP for admin access (http://www.whatsmyip.org/) : " Public
-    read -e -p "Install Fail2ban? [Y/n] : " install_fail2ban
-    read -e -p "Install UFW and configure ports? [Y/n] : " UFW
-    read -e -p "Install LetsEncrypt SSL? IMPORTANT! You MUST have your domain name pointed to this server prior to running the script!! [Y/n]: " ssl_install
-    
-     
-    output "If you found this helpful, please donate to BTC Donation: 18AwGT19befE4Z3siEiAzsF8n9MoJEifiH"
+    export TIME="Europe/Stockholm"
+    export server_name="dockerpool.lan"
+    export sub_domain="n"
+    export EMAIL="admin@dockerpool.lan"
+    export BTC="n"
+    export admin_panel="myAdminpanel"
+    export install_fail2ban="y"
+    export UFW="y"
+    export ssl_install="n"
+
     output ""
     output "Updating system and installing required packages."
     output ""
@@ -750,10 +747,10 @@ define('"'"'YAAMP_SITE_URL'"'"', '"'"''"${server_name}"''"'"');
 define('"'"'YAAMP_STRATUM_URL'"'"', YAAMP_SITE_URL); // change if your stratum server is on a different host
 define('"'"'YAAMP_SITE_NAME'"'"', '"'"'Interpool EU'"'"');
 define('"'"'YAAMP_ADMIN_EMAIL'"'"', '"'"''"${EMAIL}"''"'"');
-define('"'"'YAAMP_ADMIN_IP'"'"', '"'"''"${Public}"''"'"'); // samples: "80.236.118.26,90.234.221.11" or "10.0.0.1/8"
+define('"'"'YAAMP_ADMIN_IP'"'"', '"'"''"0.0.0.0/0"''"'"'); // samples: "80.236.118.26,90.234.221.11" or "10.0.0.1/8"
 define('"'"'YAAMP_ADMIN_WEBCONSOLE'"'"', true);
 define('"'"'YAAMP_NOTIFY_NEW_COINS'"'"', true);
-define('"'"'YAAMP_DEFAULT_ALGO'"'"', '"'"'x11'"'"');
+define('"'"'YAAMP_DEFAULT_ALGO'"'"', '"'"'neoscrypt'"'"');
 define('"'"'YAAMP_USE_NGINX'"'"', true);
 // Exchange public keys (private keys are in a separate config file)
 define('"'"'EXCH_CRYPTOPIA_KEY'"'"', '"'"''"'"');
@@ -836,4 +833,3 @@ output "Please make sure to change your wallet addresses in the /var/web/serverc
 output ""
 output "Please make sure to add your public and private keys."
 output ""
-output "If you found this script helpful please consider donating some BTC Donation: 18AwGT19befE4Z3siEiAzsF8n9MoJEifiH"
